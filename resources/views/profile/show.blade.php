@@ -5,7 +5,11 @@
     .custom-card { background-color: #121212; border: 1px solid #ff4da6; border-radius: 0; padding: 25px; color: #fff; }
     .text-pink { color: #ff4da6; font-weight: bold; }
     .btn-pink { background-color: #ff4da6; color: #000; font-weight: bold; border-radius: 0; }
+    
+    /* Optimized input values for visible typing text clarity */
     .form-control { background-color: #000 !important; color: #fff !important; border: 1px solid #333 !important; border-radius: 0; padding-top: 8px; height: 40px; }
+    .form-control::placeholder { color: rgba(255, 255, 255, 0.4) !important; }
+    
     .profile-img { width: 150px; height: 150px; border: 2px solid #ff4da6; border-radius: 50%; object-fit: cover; }
     .profile-circle { width: 150px; height: 150px; background-color: #333; border: 2px solid #ff4da6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 3rem; font-weight: bold; margin: 0 auto; }
 </style>
@@ -53,9 +57,14 @@
 
             <div class="custom-card">
                 <h5 class="text-pink mb-3">Delete Account</h5>
+                
+                <p class="text-secondary small d-block mb-3">
+                    Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.
+                </p>
+
                 <form action="{{ route('profile.destroy') }}" method="POST" onsubmit="return confirm('Are you sure?')">
                     @csrf @method('DELETE')
-                    <button type="submit" class="btn btn-outline-danger" style="border-radius: 0;">DELETE ACCOUNT</button>
+                    <button type="submit" class="btn btn-pink text-uppercase" style="background-color: #ff4da6; color: #000; border: none;">DELETE ACCOUNT</button>
                 </form>
             </div>
         </div>
