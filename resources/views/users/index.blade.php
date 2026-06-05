@@ -1,6 +1,30 @@
 @extends('dashboard')
 
 @section('content')
+<!-- Custom Styles to fix input and placeholder text visibility -->
+<style>
+    .form-control {
+        background-color: #0c0a0c !important;
+        color: #ffffff !important;
+    }
+    .form-control::placeholder {
+        color: #7a7a7a !important;
+        opacity: 1 !important;
+    }
+    /* Fixed text color when user types inside inputs */
+    .form-control:focus {
+        background-color: #0c0a0c !important;
+        color: #ffffff !important;
+        border-color: #ff4da6 !important;
+        box-shadow: 0 0 0 0.25rem rgba(255, 77, 166, 0.25) !important;
+    }
+    /* Delete input custom focus */
+    #deleteConfirmationInput:focus {
+        border-color: #dc3545 !important;
+        box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25) !important;
+    }
+</style>
+
 <div class="container-fluid p-0">
     
     @if(session('success') || session('error') || $errors->any())
@@ -105,18 +129,18 @@
                                         <div class="modal-body p-4">
                                             <div class="mb-3">
                                                 <label class="form-label text-secondary small fw-bold text-uppercase">Full Name</label>
-                                                <input type="text" name="name" class="form-control text-white" value="{{ $user->name }}" required
-                                                       style="background-color: #0c0a0c; border: 1px solid rgba(255, 77, 166, 0.4); border-radius: 6px;">
+                                                <input type="text" name="name" class="form-control" value="{{ $user->name }}" required
+                                                       style="border: 1px solid rgba(255, 77, 166, 0.4); border-radius: 6px;">
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label text-secondary small fw-bold text-uppercase">Email Address</label>
-                                                <input type="email" name="email" class="form-control text-white" value="{{ $user->email }}" required
-                                                       style="background-color: #0c0a0c; border: 1px solid rgba(255, 77, 166, 0.4); border-radius: 6px;">
+                                                <input type="email" name="email" class="form-control" value="{{ $user->email }}" required
+                                                       style="border: 1px solid rgba(255, 77, 166, 0.4); border-radius: 6px;">
                                             </div>
                                             <div class="mb-1">
                                                 <label class="form-label text-secondary small fw-bold text-uppercase">Update Password</label>
-                                                <input type="password" name="password" class="form-control text-white" placeholder="••••••••"
-                                                       style="background-color: #0c0a0c; border: 1px solid rgba(255, 77, 166, 0.4); border-radius: 6px;">
+                                                <input type="password" name="password" class="form-control" placeholder="••••••••"
+                                                       style="border: 1px solid rgba(255, 77, 166, 0.4); border-radius: 6px;">
                                             </div>
                                         </div>
                                         <div class="modal-footer border-0 pt-0 pb-4 px-4 d-flex gap-2">
@@ -150,18 +174,18 @@
                 <div class="modal-body p-4">
                     <div class="mb-3">
                         <label class="form-label text-secondary small fw-bold text-uppercase">Full Name</label>
-                        <input type="text" name="name" class="form-control text-white" placeholder="Enter name" required
-                               style="background-color: #0c0a0c; border: 1px solid rgba(255, 77, 166, 0.4); border-radius: 6px;">
+                        <input type="text" name="name" class="form-control" placeholder="Enter name" required
+                               style="border: 1px solid rgba(255, 77, 166, 0.4); border-radius: 6px;">
                     </div>
                     <div class="mb-3">
                         <label class="form-label text-secondary small fw-bold text-uppercase">Email Address</label>
-                        <input type="email" name="email" class="form-control text-white" placeholder="name@example.com" required
-                               style="background-color: #0c0a0c; border: 1px solid rgba(255, 77, 166, 0.4); border-radius: 6px;">
+                        <input type="email" name="email" class="form-control" placeholder="name@example.com" required
+                               style="border: 1px solid rgba(255, 77, 166, 0.4); border-radius: 6px;">
                     </div>
                     <div class="mb-1">
                         <label class="form-label text-secondary small fw-bold text-uppercase">Password</label>
-                        <input type="password" name="password" class="form-control text-white" placeholder="Minimum 6 characters" required
-                               style="background-color: #0c0a0c; border: 1px solid rgba(255, 77, 166, 0.4); border-radius: 6px;">
+                        <input type="password" name="password" class="form-control" placeholder="Minimum 6 characters" required
+                               style="border: 1px solid rgba(255, 77, 166, 0.4); border-radius: 6px;">
                     </div>
                 </div>
                 <div class="modal-footer border-0 pt-0 pb-4 px-4 d-flex gap-2">
@@ -189,8 +213,8 @@
                     </p>
                     <div class="mb-1">
                         <label class="form-label text-secondary small fw-bold text-uppercase">To confirm, please type <span class="text-white fw-bolder">DELETE</span> in the box below:</label>
-                        <input type="text" id="deleteConfirmationInput" class="form-control text-white autocomplete-off" placeholder="Type DELETE to confirm" required
-                               style="background-color: #0c0a0c; border: 1px solid rgba(220, 53, 69, 0.4); border-radius: 6px; letter-spacing: 1px;">
+                        <input type="text" id="deleteConfirmationInput" class="form-control autocomplete-off" placeholder="Type DELETE to confirm" required
+                               style="border: 1px solid rgba(220, 53, 69, 0.4); border-radius: 6px; letter-spacing: 1px;">
                     </div>
                 </div>
                 <div class="modal-footer border-0 pt-0 pb-4 px-4 d-flex gap-2">
