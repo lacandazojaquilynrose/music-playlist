@@ -6,17 +6,15 @@
 <style>
     .modal-content { background-color: #0c0a0c !important; border: 1px solid #ff4da6 !important; color: #ffffff !important; }
     
-    /* Fixed input text visibility and guaranteed contrast */
     .form-control { 
         background-color: #1a1a1a !important; 
         color: #ffffff !important; 
         border: 1px solid #ff4da6 !important; 
     }
     
-    /* Makes placeholders bright and perfectly visible in both search and modal inputs */
     .form-control::placeholder {
         color: rgba(255, 255, 255, 0.6) !important;
-        opacity: 1 !important; /* Overrides Firefox default opacity */
+        opacity: 1 !important;
     }
 
     .action-group { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }

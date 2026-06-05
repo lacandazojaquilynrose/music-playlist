@@ -17,7 +17,7 @@ class Playlist extends Model
 
     public function songs(): BelongsToMany
     {
-        // Removed ->withTimestamps() to stop looking for created_at/updated_at columns
+     
         return $this->belongsToMany(Song::class, 'playlist_song');
     }
 }

@@ -26,7 +26,7 @@
         }
         .btn-pink:hover { background-color: #e03d93; color: #ffffff; }
         
-        /* FIX: Ensures typed text and autofilled text are strictly visible */
+      
         .form-control-dark { 
             background-color: #000000 !important; 
             border: 1px solid #ff4da6 !important; 
@@ -41,7 +41,7 @@
             box-shadow: 0 0 8px rgba(255, 77, 166, 0.5) !important; 
         }
         
-        /* Forces Google Chrome / Edge Autofill to stay dark with white text */
+  
         input:-webkit-autofill,
         input:-webkit-autofill:hover, 
         input:-webkit-autofill:focus {

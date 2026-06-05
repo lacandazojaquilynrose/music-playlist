@@ -9,14 +9,11 @@
     <style>
         body { background-color: #0c0a0c; color: #ffffff; font-family: 'Segoe UI', sans-serif; margin: 0; min-height: 100vh; }
         
-        /* Responsive Top Header adjustments */
         .top-navbar { background-color: #0c0a0c; border-bottom: 2px solid #ff4da6; min-height: 75px; padding: 1rem 1.5rem; }
         .text-pink { color: #ff4da6 !important; }
         
-        /* Flex wrapper changes layout automatically based on device screen sizes */
         .page-wrapper { display: flex; flex-direction: column; min-height: calc(100vh - 75px); }
         
-        /* Sidebar container styles - adapts safely to phones vs desktops */
         .sidebar-wrapper { width: 100%; padding: 1rem; background-color: #0c0a0c; flex-shrink: 0; }
         .sidebar-box-container { background-color: #0c0a0c; border: 1px solid #ff4da6; border-radius: 8px; padding: 1.25rem 1rem; display: flex; flex-direction: column; }
         .sidebar-title { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #8c8c8c; font-weight: 700; margin-bottom: 1.25rem; padding-left: 0.5rem; }
@@ -27,12 +24,10 @@
         .nav-link-custom.active-link { background-color: rgba(255, 77, 166, 0.15); color: #ff4da6; }
         .sidebar-divider { border-top: 1px solid rgba(255, 77, 166, 0.4); margin: 1rem 0; }
         
-        /* Flexible viewport area padding */
         .main-viewport { flex-grow: 1; padding: 1.25rem; background-color: #0c0a0c; width: 100%; overflow-x: hidden; }
         .custom-dashboard-card { background-color: #0c0a0c; border: 1px solid #ff4da6; border-radius: 8px; padding: 1.75rem; }
         .card-icon-round { width: 48px; height: 48px; border-radius: 50%; border: 1px solid #ff4da6; display: flex; align-items: center; justify-content: center; color: #ff4da6; }
 
-        /* Media queries rule sets specifically targeting tablet / computer screens */
         @media (min-width: 768px) {
             .top-navbar { padding: 0 2.5rem; }
             .page-wrapper { flex-direction: row; }

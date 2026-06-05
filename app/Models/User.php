@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
+
 use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class User extends Authenticatable
 {
-    /** @use HasFactory<UserFactory> */
+   
     use HasFactory, Notifiable;
 
     /**
@@ -23,9 +23,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'profile_picture', // Added for Profile Upload
-        'address',         // Added for Profile Info
-        'gender',          // Added for Profile Info
+        'profile_picture', 
+        'address',         
+        'gender',         
     ];
 
     /**
@@ -51,9 +51,7 @@ class User extends Authenticatable
         ];
     }
 
-    /**
-     * Get the songs for the user.
-     */
+    
     public function songs(): HasMany
     {
         return $this->hasMany(Song::class);

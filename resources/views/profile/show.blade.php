@@ -6,7 +6,7 @@
     .text-pink { color: #ff4da6; font-weight: bold; }
     .btn-pink { background-color: #ff4da6; color: #000; font-weight: bold; border-radius: 0; }
     
-    /* Optimized input values for visible typing text clarity */
+   
     .form-control { background-color: #000 !important; color: #fff !important; border: 1px solid #333 !important; border-radius: 0; padding-top: 8px; height: 40px; }
     .form-control::placeholder { color: rgba(255, 255, 255, 0.4) !important; }
     

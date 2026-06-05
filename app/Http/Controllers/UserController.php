@@ -9,18 +9,18 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    // Display users list
+  
     public function index()
     {
         $users = User::orderBy('id', 'desc')->get();
         
-        // Count total platform users so dashboard layout template doesn't break
+  
         $userCount = User::count();
         
         return view('users.index', compact('users', 'userCount'));
     }
 
-    // Add User Action
+
     public function store(Request $request)
     {
         $request->validate([
@@ -38,7 +38,7 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'User added successfully!');
     }
 
-    // Edit User Action
+
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
@@ -61,12 +61,11 @@ class UserController extends Controller
         return redirect()->route('users.index')->with('success', 'User updated successfully!');
     }
 
-    // Delete User Action
+
     public function destroy($id)
     {
         $user = User::findOrFail($id);
         
-        // Using explicit user instantiation protects IDE type checking
         if (Auth::check() && $user->id === Auth::user()->id) {
             return redirect()->route('users.index')->with('error', 'Cannot delete your own active session!');
         }
